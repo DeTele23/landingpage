@@ -118,6 +118,9 @@ input, select, textarea {
     display: block; /* Ensure it takes up full width for alignment */
     text-align: right; 
 }
+#success-message {
+    display: none; /* Hide the message initially */
+}
 
 	html {
 		font-size: 16pt;

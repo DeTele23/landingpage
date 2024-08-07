@@ -1,17 +1,20 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])  # Handle both GET and POST
-def contact():
+@app.route('/', methods=['GET', 'POST'])
+def index():
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-        # Do something with the data (e.g., send an email)
-        return render_template('contact_success.html')  # Or another response
-    else:  # GET request
-        return render_template('contact.html')  # Render the form
+
+        # Process the data (send email, store in database, etc.)
+        
+        success = True
+        return render_template('index.html', message_sent=True, success = success)  # Pass success flag
+    else:
+        return render_template('index.html', message_sent=False)  # No flag if not sent
 
 if __name__ == '__main__':
     app.run(debug=True)
