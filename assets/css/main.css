@@ -110,6 +110,14 @@ input, select, textarea {
 		}
 
 /* Type */
+.arrow-links{
+	display: flex;
+	justify-content: space-between;
+}
+.arrow-link {
+    display: block; /* Ensure it takes up full width for alignment */
+    text-align: right; 
+}
 
 	html {
 		font-size: 16pt;
